@@ -44,8 +44,6 @@
 BOOL FromUser = NO;
 BOOL PiPDisabled = NO;
 
-extern BOOL LegacyPiP();
-
 BOOL TweakEnabled() {
     return [[NSUserDefaults standardUserDefaults] boolForKey:EnabledKey];
 }
@@ -56,6 +54,10 @@ BOOL UsePiPButton() {
 
 BOOL NoMiniPlayerPiP() {
     return [[NSUserDefaults standardUserDefaults] boolForKey:NoMiniPlayerPiPKey];
+}
+
+BOOL LegacyPiP() {
+    return [[NSUserDefaults standardUserDefaults] boolForKey:CompatibilityModeKey];
 }
 
 BOOL UseTabBarPiPButton() {
